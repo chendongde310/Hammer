@@ -236,7 +236,7 @@
 # Marshmallow removed Notification.setLatestEventInfo()
 -dontwarn android.app.Notification
 
-
+-keep  class com.orhanobut.hawk.** { *; }
 
 
 

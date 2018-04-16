@@ -122,6 +122,9 @@ dependencies {
     //test
     api rootProject.ext.dependencies["timber"]
     testImplementation rootProject.ext.dependencies["junit"]
+
+    //database
+    implementation(rootProject.ext.dependencies["hawk"])
 }
 
 

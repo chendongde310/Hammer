@@ -18,7 +18,7 @@ public class RxTransformer<T> implements ObservableTransformer<T, T> {
 
 
 
-    IView  mRootView;
+    private IView  mRootView;
 
     private RxTransformer(IView rootView) {
         this.mRootView = rootView;

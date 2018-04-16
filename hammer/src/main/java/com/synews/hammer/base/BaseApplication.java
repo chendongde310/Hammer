@@ -26,7 +26,8 @@ import com.synews.hammer.utils.HammerUtils;
 import com.synews.hammer.utils.Preconditions;
 
 /**
- * 
+ *
+ * @author chen
  */
 public class BaseApplication extends Application implements App {
     private AppLifecycles mAppDelegate;

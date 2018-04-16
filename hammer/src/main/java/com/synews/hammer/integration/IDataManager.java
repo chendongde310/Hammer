@@ -53,4 +53,19 @@ public interface IDataManager {
 
     Context getContext();
 
+    /**
+     * 本地储存数据
+     * @param key 键
+     * @param value 存的数据
+     * @return 是否存储成功
+     */
+    <T> boolean save(String key, T value);
+
+    /**
+     * 获取储存的数据
+     * @param key 键
+     * @return 获取的数据
+     */
+    <T> T get(String key);
+
 }

@@ -18,6 +18,7 @@ package com.synews.hammer.integration;
 import android.app.Application;
 import android.content.Context;
 
+import com.orhanobut.hawk.Hawk;
 import com.synews.hammer.integration.cache.Cache;
 import com.synews.hammer.integration.cache.CacheType;
 import com.synews.hammer.mvp.IModel;
@@ -105,5 +106,33 @@ public class DataManager implements IDataManager {
     @Override
     public Context getContext() {
         return mApplication;
+    }
+
+
+    /**
+     * 本地储存数据
+     * @param key 键
+     * @param value 存的数据
+     * @return 是否存储成功
+     */
+    @Override
+    public <T> boolean save(String key, T value) {
+        if (!Hawk.isBuilt()) {
+            Hawk.init(mApplication).build();
+        }
+        return Hawk.put(key, value);
+    }
+
+    /**
+     * 获取储存的数据
+     * @param key 键
+     * @return 获取的数据
+     */
+    @Override
+    public <T> T get(String key) {
+        if (!Hawk.isBuilt()) {
+            Hawk.init(mApplication).build();
+        }
+        return Hawk.get(key);
     }
 }

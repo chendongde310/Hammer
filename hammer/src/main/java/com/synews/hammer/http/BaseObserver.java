@@ -10,7 +10,8 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 /**
- * @author 陈东  -  2018/4/2 - 下午4:17
+ * @author 陈东
+ *
  */
 public abstract class BaseObserver<T> implements Observer<T> {
 
@@ -26,13 +27,13 @@ public abstract class BaseObserver<T> implements Observer<T> {
     public void onNext(T baseEntity) {
         onRequestEnd();
         //判断服务器代码
-        RequestProcessing();
+        try {
+            onSuccess(baseEntity);
+        } catch (Exception e) {
+            onError(e);
+        }
     }
 
-    /**
-     * 处理返回的代码
-     */
-    protected abstract void RequestProcessing();
 
     /**
      * 根据不同的错误情况同统一处理错误
@@ -70,7 +71,6 @@ public abstract class BaseObserver<T> implements Observer<T> {
     protected abstract void onSuccess(T data) throws Exception;
 
 
-
     /**
      * 返回失败
      *
@@ -83,6 +83,7 @@ public abstract class BaseObserver<T> implements Observer<T> {
 
     /**
      * 请求开始，重写此方法在请求之前做操作
+     *
      * @param d Disposable
      */
     protected void onRequestStart(Disposable d) {
@@ -91,7 +92,6 @@ public abstract class BaseObserver<T> implements Observer<T> {
     /**
      * 请求结束，重写此方法在请求之后做操作
      * 无论是否成功都会走此方法
-     *
      */
     protected void onRequestEnd() {
 
