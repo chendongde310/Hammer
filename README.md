@@ -82,7 +82,21 @@ TODO
 
 #开发准备
 ----
-##### 1.导入jar包
+##### 1.导入框架
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+Step 2. Add the dependency
+
+	dependencies {
+	        compile 'com.github.chendongde310:Hammer:0.0.2'
+	}
+[![](https://jitpack.io/v/com.git@gitee.chendongde310/Hammer.svg)](https://jitpack.io/#com.git@gitee.chendongde310/Hammer)
 ##### 2.引用config.gradle
  本框架提供一个含有大量第三方库的 **config.gradle** 文件 (里面的所有第三方库并不会全部被引入到项目中, 只是作为变量方便项目中多个位置进行引用, 特别适用于多 Module 的项目), 用于第三方库的版本管理, 将 **config.gradle**复制进根目录, 并在项目的顶级 **build.gradle**中添加如下代码引用它
 
