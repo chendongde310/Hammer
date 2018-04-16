@@ -1,10 +1,9 @@
 # Hammer
 Android component-based development framework
 
-#What is a Chuizi
----
+# What is a Chuizi
 「锤子」是一个Android组件化快速开发框架
-###特征
+### 特征
 * 组件化开发通用框架, 高度解耦，方便配置
 
 * 提供Base 基类(BaseActivity, BaseFragment, BaseApplication )
@@ -49,7 +48,7 @@ TODO
 *  添加更多的UI部件和适配器
 
 *  封装leakcanary  
-###使用的库
+### 使用的库
 1. 使用MVP架构
 2. Dagger2 Google出品的依赖注入框架，通过Apt编译时生成代码，性能优于使用运行时反射技术的依赖注入框架.
 3. RxJava 提供优雅的响应式Api解决异步请求以及事件处理.
@@ -96,7 +95,7 @@ Step 2. Add the dependency
 	dependencies {
 	        compile 'com.github.chendongde310:Hammer:0.0.2'
 	}
-[![](https://jitpack.io/v/com.git@gitee.chendongde310/Hammer.svg)](https://jitpack.io/#com.git@gitee.chendongde310/Hammer)
+
 ##### 2.引用config.gradle
  本框架提供一个含有大量第三方库的 **config.gradle** 文件 (里面的所有第三方库并不会全部被引入到项目中, 只是作为变量方便项目中多个位置进行引用, 特别适用于多 Module 的项目), 用于第三方库的版本管理, 将 **config.gradle**复制进根目录, 并在项目的顶级 **build.gradle**中添加如下代码引用它
 
