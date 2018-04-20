@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Hammer.iml" filepath="$PROJECT_DIR$/Hammer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hammer.iml" filepath="$PROJECT_DIR$/Hammer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hammer/hammer.iml" filepath="$PROJECT_DIR$/hammer/hammer.iml" />
       <module fileurl="file://$PROJECT_DIR$/hammer/hammer.iml" filepath="$PROJECT_DIR$/hammer/hammer.iml" />
     </modules>
   </component>
