@@ -35,6 +35,7 @@ import android.widget.Toast;
 
 import com.synews.hammer.base.App;
 import com.synews.hammer.di.component.AppComponent;
+import com.synews.hammer.http.imageloader.ImageConfig;
 import com.synews.hammer.integration.AppManager;
 
 import java.security.MessageDigest;
@@ -45,9 +46,7 @@ import static com.synews.hammer.integration.AppManager.SHOW_SNACKBAR;
 import static com.synews.hammer.integration.AppManager.START_ACTIVITY;
 
 /**
- *
  * 锤子工具
- *
  */
 public class HammerUtils {
     static public Toast mToast;
@@ -392,7 +391,6 @@ public class HammerUtils {
     }
 
 
-
     /**
      * 远程遥控 {@link AppManager#killAll()}
      * 关闭所有界面
@@ -415,6 +413,7 @@ public class HammerUtils {
 
     /**
      * 通过context获得AppComponent
+     *
      * @param context
      * @return
      */
@@ -424,4 +423,14 @@ public class HammerUtils {
         return ((App) context.getApplicationContext()).getAppComponent();
     }
 
+
+    /**
+     * 加载图片
+     *
+     * @param context Context
+     * @param config  ImageConfig
+     */
+    public static void loadImage(Context context, ImageConfig config) {
+        getAppComponentFromContext(context).imageLoader().loadImage(context, config);
+    }
 }
