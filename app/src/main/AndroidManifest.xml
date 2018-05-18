@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!-- 全局配置 -->
+        <meta-data
+            android:name="com.cqcb.hammer.config.AppConfig"
+            android:value="ConfigModule" />
+
+
     </application>
 
 </manifest>

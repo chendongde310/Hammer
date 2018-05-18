@@ -30,7 +30,7 @@ import android.widget.PopupWindow;
  * <p>
  * 因为继承于 {@link PopupWindow} ,所以它本身就是一个 {@link PopupWindow}
  * 因此如果此类里封装的功能并不能满足您的需求(不想过多封装 UI 的东西,这里只提供思想,觉得不满足需求可以自己仿照着封装)
- * 您可以直接调用 {@link PopupWindow} 的 Api 满足需求
+ * 可以直接调用 {@link PopupWindow} 的 Api 满足需求
  *
  */
 public class CustomPopupWindow extends PopupWindow {

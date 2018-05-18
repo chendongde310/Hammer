@@ -19,6 +19,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.orhanobut.hawk.Hawk;
 import com.synews.hammer.base.delegate.AppDelegate;
 import com.synews.hammer.base.delegate.AppLifecycles;
 import com.synews.hammer.di.component.AppComponent;
@@ -26,7 +27,6 @@ import com.synews.hammer.utils.HammerUtils;
 import com.synews.hammer.utils.Preconditions;
 
 /**
- *
  * @author chen
  */
 public class BaseApplication extends Application implements App {
@@ -50,8 +50,11 @@ public class BaseApplication extends Application implements App {
     @Override
     public void onCreate() {
         super.onCreate();
-        if (mAppDelegate != null){
-            this.mAppDelegate.onCreate(this);}
+        if (mAppDelegate != null) {
+            this.mAppDelegate.onCreate(this);
+        }
+
+        Hawk.init(this).build();
     }
 
     /**
@@ -60,8 +63,9 @@ public class BaseApplication extends Application implements App {
     @Override
     public void onTerminate() {
         super.onTerminate();
-        if (mAppDelegate != null){
-            this.mAppDelegate.onTerminate(this);}
+        if (mAppDelegate != null) {
+            this.mAppDelegate.onTerminate(this);
+        }
     }
 
     /**
